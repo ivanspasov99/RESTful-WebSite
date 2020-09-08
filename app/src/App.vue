@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <b-nav>
+      <b-nav-item active><router-link to="/">Home</router-link></b-nav-item>
+      <b-nav-item active><router-link to="/posts">Posts</router-link></b-nav-item>
+      <b-nav-item><router-link to="/view/1"> View Post</router-link></b-nav-item>
+    </b-nav>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+
+
+
+export default {
+  name: 'App',
+  components: {
+  },
+}
+
+</script>
+
+<style>
+</style>
