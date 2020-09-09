@@ -9,9 +9,10 @@ import VueRouter from "vue-router";
 import VueAxios from 'vue-axios'
 import axios from 'axios'
 import Posts from "@/components/Posts";
-import ViewPost from "@/components/ViewPost";
+import ViewPost from "@/components/CRUD/EditPost";
 import NotFound from "@/components/NotFound";
 import IndexPage from "@/components/IndexPage";
+import CreatePost from "@/components/CRUD/CreatePost";
 
 Vue.config.productionTip = false
 
@@ -25,7 +26,8 @@ const router = new VueRouter({
     routes: [
         { path: "/", component: IndexPage },
         { path: "/posts", component: Posts },
-        { path: "/view/:id", component: ViewPost },
+        { path: "/edit/:id", component: ViewPost },
+        { path: "/create", component: CreatePost },
         { path: "*", component: NotFound }
     ],
     mode: "history"

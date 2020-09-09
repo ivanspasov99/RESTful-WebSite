@@ -3,7 +3,7 @@
     <b-nav>
       <b-nav-item active><router-link to="/">Home</router-link></b-nav-item>
       <b-nav-item active><router-link to="/posts">Posts</router-link></b-nav-item>
-      <b-nav-item><router-link to="/view/1"> View Post</router-link></b-nav-item>
+      <b-nav-item active><router-link to="/create">Create Post</router-link></b-nav-item>
     </b-nav>
     <router-view></router-view>
   </div>
@@ -18,7 +18,6 @@ export default {
   components: {
   },
 }
-
 </script>
 
 <style>
