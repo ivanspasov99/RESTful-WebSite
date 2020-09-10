@@ -33,6 +33,8 @@ const router = new VueRouter({
     mode: "history"
 })
 
+
+
 new Vue({
     router,
     render: h => h(App),

@@ -28,6 +28,6 @@ services:
     fron-end-service:
       image: ivanspasov/vue-js-front-end:latest
       ports:
-      - 8080:80
+      - 8080:8080
       depends_on:
         - product-service
