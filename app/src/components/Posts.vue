@@ -36,12 +36,8 @@ export default {
         .then(res => this.posts = res.data);
   },
   methods: {
-    deletePost(id, event) {
-      const self = this;
-      event.preventDefault();
-      axios.delete("http://localhost:9000/api/post/" + id).then(function () {
-            self.$router.push({path: "/posts"})
-      });
+    deletePost: function (id) {
+      axios.delete("http://localhost:9000/api/post/" + id);
     },
   }
 }
