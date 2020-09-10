@@ -36,10 +36,12 @@ export default {
         .then(res => this.posts = res.data);
   },
   methods: {
-    deletePost(id) {
-      axios.delete("http://localhost:9000/api/post/" + id)
-      // why we can't reach this code down below
-      // window.location.href = "/"
+    deletePost(id, event) {
+      const self = this;
+      event.preventDefault();
+      axios.delete("http://localhost:9000/api/post/" + id).then(function () {
+            self.$router.push({path: "/posts"})
+      });
     },
   }
 }

@@ -2,12 +2,13 @@ version: "3"
 
 services:
     db:
-      container_name: postges
+      container_name: postgres
+      image: postgres
       environment:
-        POSTGRES_HOST: posgres
-          POSTGRES_PASSWORD: 123456
-          POSTGRES_USERNAME: postgres
-          # we can save the data even we kill the container
+        POSTGRES_HOST: postgres
+        POSTGRES_PASSWORD: 123456
+        POSTGRES_USERNAME: postgres
+      # we can save the data even we kill the container
       volumes:
         - ./postgres-data:/var/lib/postgresql/data
     product-service:

@@ -21,7 +21,7 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
-# irective tells Nginx to stay in the foreground
+# tells Nginx to stay in the foreground
 CMD ["nginx", "-g", "daemon off;"]
 
 
