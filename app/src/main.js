@@ -8,6 +8,7 @@ import VueRouter from "vue-router";
 
 import VueAxios from 'vue-axios'
 import axios from 'axios'
+
 import Posts from "@/components/Posts";
 import ViewPost from "@/components/CRUD/EditPost";
 import NotFound from "@/components/NotFound";
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+
 Vue.use(VueAxios, axios)
 
 Vue.use(VueRouter);
@@ -32,8 +34,6 @@ const router = new VueRouter({
     ],
     mode: "history"
 })
-
-
 
 new Vue({
     router,

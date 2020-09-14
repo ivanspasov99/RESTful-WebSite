@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form @submit="editPost" :items="items">
+    <b-form @submit="editPost" :items="post">
       <b-form-group
           label="Author:"
           label-for="author"
@@ -9,9 +9,8 @@
         <b-form-input
             id="author"
             type="text"
-            v-model="items.author"
+            v-model="post.author"
             required
-            v-bind:placeholder="items.post.author"
         ></b-form-input>
       </b-form-group>
 
@@ -19,9 +18,8 @@
         <b-form-input
             id="note"
             type="text"
-            v-model="items.note"
+            v-model="post.note"
             required
-            v-bind:placeholder="items.post.note"
         ></b-form-input>
       </b-form-group>
 
@@ -37,15 +35,11 @@ export default {
   name: "ViewPost",
   created() {
     axios.get("http://localhost:9000/api/post/" + this.$route.params.id)
-        .then(res => this.items.post = res.data)
+        .then(res => this.post = res.data)
   },
   data() {
     return {
-      items: {
-        author: "",
-        note: "",
-        post: {}
-      }
+      post: {}
     }
   },
 
@@ -54,8 +48,8 @@ export default {
       const self = this;
       event.preventDefault();
       axios.put("http://localhost:9000/api/post/" + this.$route.params.id, {
-        'author': this.items.author,
-        'note': this.items.note
+        'author': this.post.author,
+        'note': this.post.note
       }).catch(error => {
         console.log(error)
       }).then(function () {
