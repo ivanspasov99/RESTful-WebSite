@@ -11,7 +11,6 @@ RUN npm install
 # copying the rest of the files
 COPY ./ .
 
-# create the execution file
 RUN npm run build
 
 FROM nginx
