@@ -32,8 +32,8 @@ export default {
     }
   },
   created() {
-    console.log(process.env.PRODUCT_SERVICE_SERVICE_HOST)
-    console.log(process.env.PRODUCT_SERVICE_SERVICE_PORT)
+    console.log(${PRODUCT_SERVICE_SERVICE_HOST})
+    console.log(${PRODUCT_SERVICE_SERVICE_PORT})
     axios.get("http://" + process.env.PRODUCT_SERVICE_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_SERVICE_PORT + "/api/post")
         .then(res => this.posts = res.data);
   },
