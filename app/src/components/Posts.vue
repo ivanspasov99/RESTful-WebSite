@@ -32,14 +32,12 @@ export default {
     }
   },
   created() {
-    console.log(${PRODUCT_SERVICE_SERVICE_HOST})
-    console.log(${PRODUCT_SERVICE_SERVICE_PORT})
-    axios.get("http://" + process.env.PRODUCT_SERVICE_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_SERVICE_PORT + "/api/post")
+    axios.get("http://localhost:9000/api/post")
         .then(res => this.posts = res.data);
   },
   methods: {
     deletePost: function (id) {
-      axios.delete("http://" + process.env.PRODUCT_SERVICE_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_SERVICE_PORT + "/api/post/" + id);
+      axios.delete("http://localhost:9000/api/post/" + id);
     },
   }
 }

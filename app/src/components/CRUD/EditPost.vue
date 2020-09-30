@@ -34,7 +34,7 @@ import axios from "axios";
 export default {
   name: "ViewPost",
   created() {
-    axios.get("http://" + process.env.PRODUCT_SERVICE_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_SERVICE_PORT + "/api/post/" + this.$route.params.id)
+    axios.get("http://localhost:9000/api/post/" + this.$route.params.id)
         .then(res => this.post = res.data)
   },
   data() {
@@ -47,7 +47,7 @@ export default {
     editPost: function (event) {
       const self = this;
       event.preventDefault();
-      axios.put("http://" + process.env.PRODUCT_SERVICE_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_SERVICE_PORT + "/api/post/" + this.$route.params.id, {
+      axios.put("http://localhost:9000/api/post/" + this.$route.params.id, {
         'author': this.post.author,
         'note': this.post.note
       }).catch(error => {
