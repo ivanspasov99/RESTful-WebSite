@@ -47,7 +47,7 @@ export default {
     createPost: function (event) {
       const self = this;
       event.preventDefault();
-      axios.post("http://localhost:9000/api/post", {
+      axios.post("http://" + process.env.PRODUCT_SERVICE_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_SERVICE_PORT + "/api/post", {
         'author': this.post.author,
         'note': this.post.note
       }).catch(error => {

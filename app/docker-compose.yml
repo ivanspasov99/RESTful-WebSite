@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-    fron-end-service:
+    front-end-service:
       image: ivanspasov/vue-js-front-end:latest
       ports:
         - 8080:80
@@ -15,8 +15,10 @@ services:
         POSTGRES_HOST: postgres
         POSTGRES_PASSWORD: 123456
         POSTGRES_USERNAME: postgres
-      volumes:
-        - ./postgres-data:/var/lib/postgresql/data
+      #volumes:
+        #- ./postgres-data:/var/lib/postgresql/data
+      ports:
+      - 5432:5432
 
     product-service:
       image: ivanspasov/springbootapi:latest
